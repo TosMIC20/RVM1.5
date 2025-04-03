@@ -86,7 +86,7 @@ install:
 
 .PHONY: scp
 scp:
-	scp -P $(PORT) -r $(target_bin) ubuntu@localhost:/home/ubuntu
+	scp -P $(PORT) -r $(target_bin) ubuntu@localhost:/home/ubuntu/rvm-$(VENDOR).bin
 
 .PHONY: ssh
 ssh:
