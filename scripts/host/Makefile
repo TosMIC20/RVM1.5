@@ -12,6 +12,10 @@ qemu_args := \
   -net user,id=net,hostfwd=tcp::$(PORT)-:22 -net nic,model=e1000e \
   -serial mon:stdio
 
+qemu_image_ubuntu22_download := ubuntu-22.04-server-cloudimg-amd64.img
+qemu_image_ubuntu22_bak := ubuntu22_bak.img
+qemu_image_uintr := ubuntu22_uintr.img
+
 qemu_args_uintr := \
   -smp 4 -m 4G -nographic \
   -machine q35,kernel_irqchip=split \
@@ -29,9 +33,6 @@ qemu_args_uintr_accel := \
   -serial mon:stdio \
 
 
-qemu_image_ubuntu22_download := ubuntu-22.04-server-cloudimg-amd64.img
-qemu_image_ubuntu22_bak := ubuntu22_bak.img
-qemu_image_uintr := ubuntu22_uintr.img
 
 $(qemu_image):
 	wget https://cloud-images.ubuntu.com/releases/focal/release/$(qemu_image)
